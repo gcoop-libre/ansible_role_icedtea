@@ -1,0 +1,11 @@
+---
+# defaults file for ansible_role_icedtea
+
+version: 1.6.2-3.1ubuntu3
+packages:
+  - openjdk-8-jdk 
+  - "icedtea-netx={{ version }}"
+  - "icedtea-plugin={{ version }}"
+  - "icedtea-8-plugin={{ version }}"
+firefox_custom_installation_dir: /opt/ffox9/firefox/
+icedtea_plugin_path: /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so

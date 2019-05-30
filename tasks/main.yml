@@ -1,0 +1,18 @@
+---
+# tasks file for ansible_role_icedtea
+- name: install icedtea package
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+
+- name: create firefox plugins directory
+  file:
+    path: "{{ firefox_custom_installation_dir }}plugins"
+    state: directory
+  register: plugins_directory
+
+- name: create IcedTeaPlugin.so symbolic link in ffox directory 
+  file:
+    src: "{{ icedtea_plugin_path }}"
+    dest: "{{ plugins_directory.path }}/IcedTeaPlugin.so" 
+    state: link

@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  #  remote_user: cedro 
+  connection: local
+  become: true
+  roles:
+    - gcoop-libre.ansible_role_icedtea

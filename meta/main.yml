@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Francisco Alvarez 
+  description: Ansible role for install icedtea 
+  company: gcoop Cooperativa de Software Libre
+  license: GPLv3
+  min_ansible_version: 2.5
+  platforms:
+    - name: ubuntu
+      versions:
+        - bionic
+  galaxy_tags:
+    - desktop
+    - java
+dependencies: []
