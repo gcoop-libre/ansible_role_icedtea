@@ -1,6 +1,7 @@
 ---
 # defaults file for ansible_role_icedtea
 
+skel_icedtea_path: /etc/skel/.config/icedtea-web/
 version: 1.6.2-3.1ubuntu3
 packages:
     #  - openjdk-8-jre

@@ -5,14 +5,30 @@
     name: "{{ packages }}"
     update_cache: yes
 
-- name: create firefox plugins directory
+- name: create the firefox plugins directory
   file:
     path: "{{ firefox_custom_installation_dir }}plugins"
     state: directory
   register: plugins_directory
 
-- name: create IcedTeaPlugin.so symbolic link in ffox directory 
+- name: create IcedTeaPlugin.so symbolic link in ffox directory
   file:
     src: "{{ icedtea_plugin_path }}"
     dest: "{{ plugins_directory.path }}/IcedTeaPlugin.so" 
     state: link
+
+- name: create the icedplugin config directory
+  file:
+    path: "{{ skel_icedtea_path }}/security"
+    state: directory
+  register: plugins_directory
+
+- name: copy the appletTrustSettings config file
+  template:
+    src: templates/appletTrustSettings.j2
+    dest: "{{ skel_icedtea_path }}/.appletTrustSettings"
+
+- name: copy the java.policy config file
+  template:
+    src: templates/java.policy.j2
+    dest: "{{ skel_icedtea_path }}/security/java.policy"
