@@ -4,7 +4,6 @@
 skel_icedtea_path: /etc/skel/.config/icedtea-web/
 version: 1.6.2-3.1ubuntu3
 packages:
-    #  - openjdk-8-jre
   - "icedtea-netx={{ version }}"
   - "icedtea-netx-common={{ version }}"
   - "icedtea-8-plugin={{ version }}"

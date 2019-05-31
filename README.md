@@ -15,11 +15,11 @@ Dependencies
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+- hosts: servers
+  roles:
+    - role: gcoop-libre.ansible_role_icedtea
+      version: 1.6.2-3.1ubuntu3
+      firefox_custom_installation_dir: /opt/ffox52/firefox/
 
 License
 -------
